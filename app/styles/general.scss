@@ -1,0 +1,329 @@
+.layout {
+  padding: 0;
+  ul {
+    align-items: center;
+    color: white;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    height: 60px;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 40px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    li {
+      border: 1px solid transparent;
+      cursor: pointer;
+      margin-right: 10px;
+      padding: 10px;
+      &:hover {
+        border: 1px solid $pale-grey;
+        border-radius: 6px;
+      }
+    }
+  }
+  .activeTab {
+    border: 1px solid $pale-grey;
+    border-radius: 6px;
+  }
+  .cards-wrapper {
+    padding-top: 90px;
+    .card {
+      padding: 20px;
+    }
+    #card {
+      background-color: $whitebackground;
+      box-shadow: 10px 11px 25px -8px rgba(0,0,0,0.64);
+      cursor: pointer;
+      min-height:450px;
+      -webkit-box-shadow: 10px 11px 25px -8px rgba(0,0,0,0.64);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+
+      .card-front {
+        align-items: center;
+        display: flex;
+        font-size: 300px;
+        justify-content: center;
+        min-height:450px;
+        position: relative;
+        img {
+          width: 100%;
+        }
+        .info {
+          align-items: center;
+          background: white;
+          bottom:0;
+          color: $gunmetal;
+          display: flex;
+          font-size: 22px;
+          font-weight: bold;
+          height: 10%;
+          justify-content: center;
+          left:0;
+          overflow:hidden;
+          position:absolute;
+          transition: all 0.2s linear;
+          width: 100%;
+          -webkit-transition: all 0.2s linear;
+          -moz-transition: all 0.2s linear;
+          -o-transition: all 0.2s linear;
+        }
+        &:hover {
+          .info {
+            height: 40%;
+          }
+          .overlay {
+            background: rgba(153, 153, 153, 0.48);
+            height: 100%;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+          }
+        }
+      }
+      .side {
+        backface-visibility: hidden;
+        height: 100%;
+        text-align: center;
+        -webkit-backface-visibility: hidden;
+      }
+      .card-back {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: absolute;
+        text-align: center;
+        transform: rotatey(-180deg);
+        top: 0;
+        width: 100%;
+        -webkit-transform: rotatey(-180deg);
+        .header {
+          align-items: center;
+          background: $light-grey;
+          display: flex;
+          height: 150px;
+          justify-content: space-between;
+          h3 {
+            color: $cement;
+            margin: 0;
+            padding: 10px;
+          }
+          i {
+            color: $cement;
+            font-size: 30px;
+          }
+        }
+
+        .details-wrapper {
+          font-size: 16px;
+          overflow-y: scroll;
+          white-space: pre-wrap;
+          width: 100%;
+          .detail {
+            align-items: center;
+            border-bottom: 1px solid $light-grey;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            &:last-child {
+              border-bottom: none;
+            }
+            label {
+              color: $cement;
+              font-size: 22px;
+              text-transform: uppercase;
+            }
+            p {
+              color: $gunmetal;
+              font-size: 18px;
+            }
+          }
+          &::-webkit-scrollbar {
+            background-color: $pale-grey;
+            width: 4px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: $dark-grey;
+            border-radius: 6px;
+          }
+        }
+      }
+
+      .ribbon {
+        overflow: hidden;
+        position: absolute;
+        right: -5px; top: -5px;
+        text-align: right;
+        width: 75px; height: 75px;
+        z-index: 1;
+      }
+      .ribbon span {
+        background-color: $algae-green;
+        box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+        color: white;
+        display: block;
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 20px;
+        position: absolute;
+        text-transform: uppercase;
+        text-align: center;
+        top: 19px; right: -21px;
+        transform: rotate(45deg);
+        width: 100px;
+        -webkit-transform: rotate(45deg);
+      }
+      .ribbon span::before {
+        border: 3px solid transparent;
+        border-left-color: $algae-green;
+        border-top-color: $algae-green;
+        content: "";
+        position: absolute; left: 0; top: 100%;
+        z-index: -1;
+      }
+      .ribbon span::after {
+        border: 3px solid transparent;
+        border-right-color: $algae-green;
+        border-top-color: $algae-green;
+        content: "";
+        position: absolute; right: 0; top: 100%;
+        z-index: -1;
+      }
+
+      .ribbon-people span {
+        background-color: $people-background;
+        &::before {
+          border-left-color: $people-background;
+          border-top-color: $people-background;
+        }
+        &::after {
+          border-right-color: $people-background;
+          border-top-color: $people-background;
+        }
+      }
+
+      .ribbon-starships span {
+        background-color: $starships-background;
+        &::before {
+          border-left-color: $starships-background;
+          border-top-color: $starships-background;
+        }
+        &::after {
+          border-right-color: $starships-background;
+          border-top-color: $starships-background;
+        }
+      }
+      .ribbon-planets span {
+        background-color: $planets-background;
+        &::before {
+          border-left-color: $planets-background;
+          border-top-color: $planets-background;
+        }
+        &::after {
+          border-right-color: $planets-background;
+          border-top-color: $planets-background;
+        }
+      }
+    }
+    .flipped {
+      transform: rotatey(-180deg);
+      -webkit-transform: rotatey(-180deg);
+          .card-front {
+            display: none !important;
+            .info {
+              display: none;
+            }
+          }
+    }
+  }
+  .animated {
+    animation-duration: .4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .4s;
+    -webkit-animation-fill-mode: both;
+  }
+
+  @-webkit-keyframes bounceInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-2000px);
+    }
+    60% {
+      opacity: 1;
+      -webkit-transform: translateY(30px);
+    }
+    80% {
+      -webkit-transform: translateY(-10px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+    }
+  }
+
+  @keyframes bounceInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    80% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .bounceInDown {
+    animation-name: bounceInDown;
+    -webkit-animation-name: bounceInDown;
+  }
+}
+
+.people {
+  background: $people-background;
+  .card-front {
+    color: $people-background;
+  }
+}
+
+.starships {
+  background: $starships-background;
+  .card-front {
+    color: $starships-background;
+  }
+}
+
+.planets {
+  background: $planets-background;
+  .card-front {
+    color: $planets-background;
+  }
+}
+
+.all {
+  background: $dark-grey;
+  .card-front {
+    color: $dark-grey
+  }
+}
+
+@media (max-width: 430px) {
+  .layout ul {
+    font-size: 12px;
+  }
+}

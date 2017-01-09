@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="" ng-app="Cards-app">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1,  maximum-scale=1, minimal-ui, user-scalable=no">
+    <title>Cards app</title>
+
+    <!-- inject:bower:css -->
+    <link rel="stylesheet" href="vendor/css/bower.css">
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endinject -->
+</head>
+<body class="{{$root.activeClass}}">
+
+<!-- inject:bower:js -->
+<script src="vendor/scripts/vendor.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="js/main.js"></script>
+<script src="js/templates/templates.js"></script>
+<!-- endinject -->
+
+
+<div class="view" ui-view>
+    <cards></cards>
+</div>
+
+
+</body>
+</html>

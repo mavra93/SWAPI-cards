@@ -1,0 +1,25 @@
+<div id="card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped">
+    <div class="ribbon" ng-if="!isFlipped" ng-class="$ctrl.getRibbonClass($ctrl.info.type)"><span>{{$ctrl.info.type}}</span></div>
+    <div class="side card-front">
+        <i class="material-icons" ng-if="$ctrl.info.type === 'starships'">flight_takeoff</i>
+        <i class="material-icons" ng-if="$ctrl.info.type === 'planets'">language</i>
+        <i class="material-icons" ng-if="$ctrl.info.type === 'people'">people</i>
+        <div class="overlay"></div>
+        <div class="info">
+            {{$ctrl.info.name}}
+        </div>
+    </div>
+    <div class="side card-back">
+        <div class="header">
+            <h3>INFO</h3>
+            <i class="material-icons">close</i>
+        </div>
+        <div class="details-wrapper">
+            <div class="detail" ng-repeat="detail in $ctrl.cardInfo">
+                <label>{{detail.label}}</label>
+                <p>{{detail.value}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+

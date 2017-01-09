@@ -1,0 +1,8 @@
+<div class="col-sm-12 layout">
+    <ul class="{{$root.activeClass}}">
+        <li ng-repeat="tab in $ctrl.tabs" ng-click="$ctrl.changeTab(tab)" ng-class="{ 'activeTab' : $ctrl.activeTab === tab}">{{tab | uppercase}}</li>
+    </ul>
+    <div class="cards-wrapper">
+        <card ng-repeat="cardInfo in $ctrl.cards track by $index" info="cardInfo" class="card col-lg-3 col-md-4 col-sm-6 col-xs-12 animated bounceInDown"></card>
+    </div>
+</div>

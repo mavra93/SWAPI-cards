@@ -1,0 +1,26 @@
+{
+  "name": "Cards-app",
+  "version": "1.0.0",
+  "authors": [
+    "ivanmzg93@gmail.com"
+  ],
+  "description": "Farmeron Javascript zadatak",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "^1.6.1"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}
